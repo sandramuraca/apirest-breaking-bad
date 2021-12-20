@@ -19,13 +19,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .tarjeta {
   width: 200px;
-  height: 350px;
+  height: 300px;
   padding: 20px;
   margin: 15px;
-  border: 1px solid black;
-  border-radius: 10px;
-  color: #00FF00;
+  border: 1px solid #aff7d3;
+  border-radius: 5px;
+  color: #3ea372;
   font-family: "Helvetica";
+  background-color: #d6dbd9;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,6 +45,18 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #imagen-personaje {
   width: 100%;
+}
+
+/*.contenedor-img.nav{
+ @include contenedor-imagen-nav();
+}
+*/
+.img-caravan {
+  width: 220px;
+}
+
+body {
+  background-color: #7c7c7c;
 }
 
 /*# sourceMappingURL=style.css.map */

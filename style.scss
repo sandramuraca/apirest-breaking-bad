@@ -2,3 +2,8 @@
 @import "mixin";
 @import "variables";
 @import "componentes/card";
+@import "componentes/nav";
+
+body{
+    background-color:$color-principal;
+}

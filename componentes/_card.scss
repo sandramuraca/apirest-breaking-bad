@@ -5,7 +5,6 @@
 .tarjeta {
     @include  card();
     @include displayflex($direction:column, $content: space-between)
-
 }
 
 .contenedor-imagen{

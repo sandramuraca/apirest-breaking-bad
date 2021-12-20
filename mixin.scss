@@ -8,13 +8,14 @@
    
    @mixin card (){
        width: 200px;
-       height: 350px;
+       height: 300px;
        padding: 20px;
        margin: 15px;
-       border: 1px solid black;
-       border-radius: 10px;
-       color: $color-principal;
+       border: 1px solid $color-terciario;
+       border-radius: 5px;
+       color: $color-secundario;
        font-family: $tipografia-principal;
+       background-color: $color-tarjeta-adentro;
        
    }
    
@@ -25,3 +26,11 @@
    @mixin contenedor-imagen(){
        width: 180px;
    }
+
+   @mixin imagen-nav(){
+    width: 100%
+    }
+
+    @mixin contenedor-imagen-nav(){
+    width: 100px;
+    }
