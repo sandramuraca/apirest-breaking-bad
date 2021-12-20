@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 @import "resets";
 @import "mixin";
 @import "variables";
 @import "componentes/card";
 @import "componentes/nav";
+@import "componentes/campo-busqueda";
 
 body{
     background-color:$color-principal;

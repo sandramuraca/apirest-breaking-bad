@@ -41,7 +41,7 @@ const crearTarjeta = (data) =>{
         <div class="contenedor-imagen">
             <img id="imagen-personaje" src="${elemento.img}" alt="">
         </div>
-        <p id="nombre-personaje">Nombre:${elemento.name}</p>
+        <p id="nombre-personaje"> <strong>Nombre:</strong> ${elemento.name}</p>
         
         </div>
         `

@@ -20,16 +20,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .tarjeta {
-  width: 180px;
+  width: 200px;
   height: 300px;
   padding: 20px;
   margin: 15px;
-  border: 2px solid #FFD33F;
+  border: 1px solid #FFD33F;
   border-radius: 5px;
   color: #54534f;
   font-family: "Inter", sans-serif;
   background-color: #d6dbd9;
-  box-shadow: -6px -3px 40px 2px rgba(255, 211, 63, 0.37);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,7 +37,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .contenedor-imagen {
-  width: 160px;
+  width: 180px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -88,7 +87,7 @@ li {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 35px;
   margin-bottom: 35px;
 }
 
@@ -97,20 +96,10 @@ label {
   color: #FFF3CF;
   font-weight: 600;
   font-size: 25px;
-  margin-right: 15px;
-}
-
-.input-busqueda {
-  border: #FFD33F;
-  color: #54534f;
-  background: #FFF3CF;
-  font-family: "Inter", sans-serif;
-  height: 30px;
-  border-radius: 5px;
 }
 
 body {
   background-color: #54534f;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.cs.map */

@@ -1,0 +1,22 @@
+.seccion-buscador{
+    @include displayflex();
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+
+
+
+label{
+    @include  nav-busqueda();
+   margin-right: 15px;
+}
+
+.input-busqueda{
+    border: $color-terciario;
+    color: $color-principal;
+    background: $color-secundario;
+    font-family: $tipografia-principal;
+    height: 30px;
+    border-radius: 5px;
+}

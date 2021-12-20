@@ -7,16 +7,16 @@
    }
    
    @mixin card (){
-       width: 200px;
+       width: 180px;
        height: 300px;
        padding: 20px;
        margin: 15px;
-       border: 1px solid $color-terciario;
+       border: 2px solid $color-terciario;
        border-radius: 5px;
-       color: $color-secundario;
+       color: $color-principal;
        font-family: $tipografia-principal;
-       background-color: $color-tarjeta-adentro;
-       
+      background-color: $color-tarjeta-adentro;
+      box-shadow: -6px -3px 40px 2px rgba(255,211,63,0.37);
    }
    
    @mixin imagen-card(){
@@ -24,7 +24,7 @@
    }
    
    @mixin contenedor-imagen(){
-       width: 180px;
+       width: 160px;
    }
 
    @mixin imagen-nav(){
@@ -33,4 +33,11 @@
 
     @mixin contenedor-imagen-nav(){
     width: 100px;
+    }
+
+    @mixin nav-busqueda(){
+        font-family: $tipografia-principal;
+        color: $color-secundario;
+        font-weight: 600;
+        font-size: 25px;
     }
