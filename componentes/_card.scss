@@ -1,0 +1,18 @@
+.contenedor-tarjetas{
+    @include displayflex()
+}
+
+.tarjeta {
+    @include  card();
+    @include displayflex($direction:column, $content: space-between)
+
+}
+
+.contenedor-imagen{
+    @include contenedor-imagen();
+    @include displayflex($aling: top);
+}
+
+#imagen-personaje{
+    @include imagen-card()
+}
