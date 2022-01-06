@@ -1,9 +1,4 @@
 /*
-https://breakingbadapi.com/documentation
-
-Comunicandote con la api, obtené una lista de todos los recursos disponibles**
-Por cada uno de ellos, hacé una tarjeta en HTML (por ejemplo: todos los personajes)**
-
 PENDIENTE
 Al hacer click en cada tarjeta,
 La lista de tarjetas debe ocultarse.
@@ -17,6 +12,11 @@ const UrlBase = "https://www.breakingbadapi.com/api/"
 const endPointCharacters = "https://breakingbadapi.com/api/characters"
 
 const cardPersonajes = document.querySelector("#card-personajes")
+const contenedorTarjetasIndividuales = document.querySelector(".contenedor-tarjetas-individuales")
+
+
+const formBusqueda = document.querySelector("#form-busqueda")
+const inputBusqueda = document.querySelector("#input-busqueda")
 
 //Get endpoint personajes
 const traerInfoPersonajes= () =>{
@@ -37,7 +37,7 @@ const crearTarjeta = (data) =>{
 
         return acc + 
         `
-        <div class="tarjeta">
+        <div class="tarjeta" data-id="${elemento.char_id}">
         <div class="contenedor-imagen">
             <img id="imagen-personaje" src="${elemento.img}" alt="">
         </div>
@@ -47,36 +47,68 @@ const crearTarjeta = (data) =>{
         `
     }, "")
     cardPersonajes.innerHTML = mostrarEnHtml
+    asignarClicksACards()
 }
 
 traerInfoPersonajes()
 
-/* datos para mostrar cuando se abra la tarjeta
-<p id="nickname-personaje">Nick Name:${elemento.nickname}</p>
-        <p id="ocupacion-personaje">Ocupación: ${elemento.occupation}</p>
-        <p id="status-personaje">Status: ${elemento.status}</p>
-*/
 
-// campo de busqueda 
-
-const formBusqueda = document.querySelector("#form-busqueda")
-const inputBusqueda = document.querySelector("#input-busqueda")
-
+//busqueda por personajes
 const busquedaPersonajes = (busqueda) => {
  
    fetch(`https://breakingbadapi.com/api/characters?name=${busqueda}`)
   .then((res) =>  res.json())
   .then((data) => {
    crearTarjeta(data)
-   console.log(data)
+
     })
 }
-
-console.log(inputBusqueda.value)
-console.log(inputBusqueda)
 
 formBusqueda.onsubmit = (e) => {
     e.preventDefault()
     busquedaPersonajes(inputBusqueda.value)
 }
+
+
+const verCardIndividual = (char_id) =>{
+    fetch(`https://breakingbadapi.com/api/characters/${char_id}`)
+    .then((res) => res.json())
+    .then((data) =>{
+       console.log(data)
+       //ocultar contenerdor tarjetar
+       cardPersonajes.classList.toggle(".ocultar")
+
+       //mostar contenedor tarjeta individual
+       contenedorTarjetasIndividuales.classList.toggle(".ocultar") 
+       
+       //crear tarjeta de personaje individUAL
+       const crearTarjetaIndiviual = () =>{
+        `
+        <div class="tarjeta" data-id="${elemento.char_id}">
+        <div class="contenedor-imagen">
+            <img id="imagen-personaje" src="${elemento.img}" alt="">
+        </div>
+        <p id="nombre-personaje"> <strong>Nombre:</strong> ${elemento.name}</p>
+        <p id="nickname-personaje">Nick Name:${elemento.nickname}</p>
+        <p id="ocupacion-personaje">Ocupación: ${elemento.occupation}</p>
+        <p id="status-personaje">Status: ${elemento.status}</p>
+        </div>
+       `
+       }
+       contenedorTarjetasIndividuales.innerHTML = crearTarjetaIndiviual
+
+    })
+}
+
+const asignarClicksACards = () =>{
+    const cards = document.querySelectorAll(".tarjeta");
+    
+    for (let i = 0; i< cards.length; i++) {
+        
+        cards[i].onclick = () =>{
+            const idPersonajes = cards[i].dataset.id;
+            verCardIndividual(idPersonajes);
+        }
+    }
+} 
 
