@@ -8,25 +8,44 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Barra navegación -->
     <nav>
         <div class="contenedor-img.nav"> <img src="./assets/PngItem_1906030.png" alt="caravan" class="img-caravan"></div>
         <ul class="botones-nav">
-            <li>Personajes</li>
-            <li>Episodios</li>
-            <li>Citas</li>
-            <li>Muertes</li>
+            <li id="boton-personajes">Personajes</li>
+            <li id="boton-episodios">Episodios</li>
+            <li id="boton-citas">Citas</li>
+            <li id="boton-muertes">Muertes</li>
         </ul>
     </nav>
 
-    <section class="seccion-buscador">
+    <!--Main  -->
+    <main class="hero">
+        <div class="contenedor-img-hero">
+            <img src="./assets/walter-jessie4.jpg" alt="desierto-walter-jessie" class="img-hero">
+        </div>
+    </main>
+
+    <!-- Campo de búsqueda -->
+    <section class="seccion-buscador ocultar">
         <form action="" id="form-busqueda">
             <label for="">Buscar Personaje</label>
             <input type="text" name="" id="input-busqueda" placeholder="Escriba aqui el nombre del personaje" size="50" class="input-busqueda">
         </form>
     </section>
     
-    <div id="card-personajes" class="contenedor-tarjetas"></div>
-    <div class="contenedor-tarjetas-individuales"></div>
+
+    <!-- Sección personajes  -->
+    <section class="seccion-personajes ocultar">
+        <div id="card-personajes" class="contenedor-tarjetas"></div>
+        <div class="contenedor-tarjetas-individuales"></div>
+    </section>
+    
+    <!-- Sección -->
+
+    <section>
+
+    </section>
 
     <footer></footer>
     

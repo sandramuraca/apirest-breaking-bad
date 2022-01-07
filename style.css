@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400&family=Inter:wght@300;400;600&display=swap");
 body {
   margin: 0;
   padding: 0;
@@ -27,7 +29,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border: 2px solid #6E6A5E;
   border-radius: 5px;
   color: #54534f;
-  font-family: "Inter", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   background-color: #d6dbd9;
   box-shadow: 5px 5px 12px -3px #EBD387;
   display: flex;
@@ -48,10 +50,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #imagen-personaje {
   width: 100%;
-}
-
-.ocultar {
-  display: none;
+  /*border: 1px solid $color-principal;*/
+  box-shadow: 5px 5px 12px -3px #54534f;
 }
 
 nav {
@@ -60,6 +60,14 @@ nav {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #54534f;
+  padding-bottom: 20px;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 200 px;
+  box-shadow: 5px 5px 12px -3px #EBD387;
+  font-weight: 200;
 }
 
 .botones-nav {
@@ -75,12 +83,12 @@ li {
 }
 
 .img-caravan {
-  width: 220px;
+  width: 180px;
 }
 
 .botones-nav {
   list-style: none;
-  font-family: "Inter", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   color: #EEE7CF;
   font-weight: 600;
   font-size: 25px;
@@ -92,12 +100,11 @@ li {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 40px;
   margin-bottom: 35px;
 }
 
 label {
-  font-family: "Inter", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   color: #EEE7CF;
   font-weight: 600;
   font-size: 25px;
@@ -108,13 +115,28 @@ label {
   border: #EBD387;
   color: #54534f;
   background: #EEE7CF;
-  font-family: "Inter", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   height: 30px;
   border-radius: 5px;
+  margin-top: 180px;
+}
+
+.contenedor-img-hero {
+  width: 100 vw;
+  height: 480px;
+}
+
+.img-hero {
+  margin-top: 130px;
+  width: 100%;
 }
 
 body {
   background-color: #54534f;
+}
+
+.ocultar {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

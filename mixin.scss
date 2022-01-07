@@ -20,7 +20,9 @@
    }
    
    @mixin imagen-card(){
-       width: 100%
+       width: 100%;
+       
+       box-shadow: 5px 5px 12px -3px $color-principal;
    }
    
    @mixin contenedor-imagen(){
@@ -40,4 +42,15 @@
         color: $color-secundario;
         font-weight: 600;
         font-size: 25px;
+    }
+
+    @mixin nav(){
+        background-color: $color-principal;
+        padding-bottom: 20px;
+        position: fixed;
+        z-index: 3;
+        width: 100%;
+        height: 200 px;
+        box-shadow: 5px 5px 12px -3px $color-terciario;
+        font-weight: 200;
     }

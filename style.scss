@@ -5,7 +5,13 @@
 @import "componentes/card";
 @import "componentes/nav";
 @import "componentes/campo-busqueda";
+@import "componentes/main";
+
 
 body{
     background-color:$color-principal;
+}
+
+.ocultar{
+    display: none;
 }

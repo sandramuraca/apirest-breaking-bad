@@ -1,5 +1,6 @@
 nav{
  @include displayflex($content: space-around);
+ @include nav()
 }
 
 .botones-nav{
@@ -11,7 +12,7 @@ li{
 }
 
 .img-caravan{
-    width: 220px;
+    width: 180px;
 }
 
 .botones-nav{
