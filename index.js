@@ -80,12 +80,12 @@ const crearTarjetaEpisodios = (data) =>{
 
         return acc + 
         `
-        <div class="tarjeta-episodio" data-id="${elemento.episode_id}">
-        <p>Episodio Nro: ${elemento.episode}</p>
-        <p>Titulo: ${elemento.title}</p>
-        <p>Temporada: ${elemento.season}</p>
-        <p>Fecha estreno: ${elemento.air_date}</p>
-        <p>Personajes: ${elemento.characters}</p>
+        <div class="tarjeta-episodio" data-id="${elemento.episode_id}" >
+        <p style="text-align: center"><strong>Episodio Nro: </strong>${elemento.episode}</p>
+        <p> <strong>Titulo:</strong>  ${elemento.title}</p>
+        <p><strong>Temporada:</strong> ${elemento.season}</p>
+        <p><strong>Fecha estreno:</strong> ${elemento.air_date}</p>
+        <p><strong>Personajes:</strong> ${elemento.characters}</p>
         </div>
         `
     }, "")
@@ -111,6 +111,7 @@ botonEpisodios.onclick = () => {
     hero.classList.add("ocultar")
     seccionPersonajes.classList.add("ocultar")
     seccionEpisodios.classList.toggle("ocultar") 
+    seccionBuscador.classList.add("ocultar")
 }
 
 

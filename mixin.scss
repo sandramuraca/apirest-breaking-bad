@@ -6,7 +6,8 @@
     flex-wrap: wrap;
    }
    
-   @mixin card (){
+   //no toma el width como parametro - lo quiero cambiar en la card de episodios
+   @mixin card ($width: 180px,){
        width: 180px;
        height: 300px;
        padding: 20px;

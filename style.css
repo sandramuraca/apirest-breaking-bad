@@ -53,6 +53,30 @@ p, h1, h2, h3, h4, h5, h6 {
   box-shadow: 5px 5px 12px -3px #54534f;
 }
 
+.contenedor-tarjetas-episodios {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tarjeta-episodio {
+  width: 180px;
+  height: 300px;
+  padding: 20px;
+  margin: 15px;
+  border: 2px solid #6E6A5E;
+  border-radius: 5px;
+  color: #54534f;
+  font-family: "Fira Sans", sans-serif;
+  background-color: #d6dbd9;
+  box-shadow: 5px 5px 12px -3px #EBD387;
+  font-size: 15px;
+  width: 220px;
+  height: auto;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -138,18 +162,23 @@ label {
   width: 100%;
 }
 
+.seccion-episodios {
+  font-family: "Fira Sans", sans-serif;
+  color: #EEE7CF;
+}
+
+.titulo-episodios {
+  text-align: center;
+  font-weight: 400;
+  padding-top: 150px;
+}
+
 body {
   background-color: #54534f;
 }
 
 .ocultar {
   display: none;
-}
-
-.episodio {
-  width: 500px;
-  height: 200px;
-  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

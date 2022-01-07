@@ -6,6 +6,7 @@
 @import "componentes/nav";
 @import "componentes/campo-busqueda";
 @import "componentes/main";
+@import "componentes/secciones";
 
 
 body{
@@ -16,9 +17,3 @@ body{
     display: none;
 }
 
-.episodio{
-
-    width: 500px;
-    height: 200px;
-    background-color: red;
-}

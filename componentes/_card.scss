@@ -16,3 +16,14 @@
     @include imagen-card()
 }
 
+.contenedor-tarjetas-episodios{
+    @include displayflex()
+}
+
+//no esta tomando el parameto del ancho
+.tarjeta-episodio{
+    @include  card($width: 220px);
+    font-size: 15px;
+    width: 220px;
+    height: auto;
+}
