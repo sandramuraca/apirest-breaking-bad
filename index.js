@@ -10,6 +10,7 @@ Seguí el código de la clase anterior para guiarte.*/
 //Seleccion elementos del Dom y Variables
 const UrlBase = "https://www.breakingbadapi.com/api/"
 const endPointCharacters = "https://breakingbadapi.com/api/characters"
+const endPointEpisodios = "https://breakingbadapi.com/api/episodes"
 
 const botonPersonajes = document.querySelector("#boton-personajes")
 
@@ -22,8 +23,9 @@ const seccionPersonajes = document.querySelector(".seccion-personajes")
 const cardPersonajes = document.querySelector("#card-personajes")
 const contenedorTarjetasIndividuales = document.querySelector(".contenedor-tarjetas-individuales")
 
-
-
+const seccionEpisodios = document.querySelector(".seccion-episodios")
+const botonEpisodios = document.querySelector("#boton-episodios")
+const contenedorTarjetasEpisodios = document.querySelector(".contenedor-tarjetas-episodios")
 
 //Get endpoint personajes
 const traerInfoPersonajes= () =>{
@@ -35,6 +37,17 @@ const traerInfoPersonajes= () =>{
 }
 
 traerInfoPersonajes()
+
+//Get endpoint episodios
+const traerInfoEpisodios= () =>{
+    fetch(endPointEpisodios)
+    .then((res) =>  res.json())
+    .then((data) => {
+      crearTarjeta(data)
+    })
+  }
+  
+  traerInfoEpisodios()
 
 
 //crear tarjetas en html de los personajes
@@ -54,29 +67,40 @@ const crearTarjeta = (data) =>{
         `
     }, "")
     cardPersonajes.innerHTML = mostrarEnHtml
-    //asignarClicksACards()
+    //asignarClicksACards()  //esta comentado por que me tira error
 }
 
 traerInfoPersonajes()
 
 
+
+
+//Interacciones con los botones del nav
 botonPersonajes.onclick = () => {
     console.log("click en boton")
-    hero.classList.toggle("ocultar")
-    seccionBuscador.classList.toggle("ocultar")
-    seccionPersonajes.classList.toggle("ocultar")
-
+    hero.classList.add("ocultar")
+    seccionBuscador.classList.remove("ocultar")
+    seccionPersonajes.classList.remove("ocultar")
+    
 }
 
-//busqueda por personajes
-const busquedaPersonajes = (busqueda) => {
- 
-   fetch(`https://breakingbadapi.com/api/characters?name=${busqueda}`)
-  .then((res) =>  res.json())
-  .then((data) => {
-   crearTarjeta(data)
+botonEpisodios.onclick = () => {
+    console.log("click en boton episodios")
+    hero.classList.add("ocultar")
+    seccionPersonajes.classList.add("ocultar")
+    seccionEpisodios.classList.toggle("ocultar") 
+}
 
-    })
+
+//busqueda por personajes
+function busquedaPersonajes(busqueda) {
+
+    fetch(`https://breakingbadapi.com/api/characters?name=${busqueda}`)
+        .then((res) => res.json())
+        .then((data) => {
+            crearTarjeta(data)
+
+        })
 }
 
 formBusqueda.onsubmit = (e) => {

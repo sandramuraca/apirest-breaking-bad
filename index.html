@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5f812df695.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -12,10 +13,10 @@
     <nav>
         <div class="contenedor-img.nav"> <img src="./assets/PngItem_1906030.png" alt="caravan" class="img-caravan"></div>
         <ul class="botones-nav">
-            <li id="boton-personajes">Personajes</li>
-            <li id="boton-episodios">Episodios</li>
-            <li id="boton-citas">Citas</li>
-            <li id="boton-muertes">Muertes</li>
+            <li class="boton-nav" id="boton-personajes">Personajes</li>
+            <li class="boton-nav" id="boton-episodios">Episodios</li>
+            <li class="boton-nav" id="boton-citas">Citas</li>
+            <li class="boton-nav" id="boton-muertes">Muertes</li>
         </ul>
     </nav>
 
@@ -29,7 +30,7 @@
     <!-- Campo de búsqueda -->
     <section class="seccion-buscador ocultar">
         <form action="" id="form-busqueda">
-            <label for="">Buscar Personaje</label>
+            <label for=""> Buscar Personaje <span><i class="fas fa-search"></i></span></label>
             <input type="text" name="" id="input-busqueda" placeholder="Escriba aqui el nombre del personaje" size="50" class="input-busqueda">
         </form>
     </section>
@@ -41,9 +42,12 @@
         <div class="contenedor-tarjetas-individuales"></div>
     </section>
     
-    <!-- Sección -->
+    <!-- Sección episodios -->
 
-    <section>
+    <section class="seccion-episodios ocultar">
+        <div class="episodio" > muestra</div>
+        <div id="card-episodios" class="contenedor-tarjetas-episodios"></div>
+        <div class="contenedor-tarjetas-individuales-episodio"></div>
 
     </section>
 

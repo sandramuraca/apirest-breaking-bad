@@ -8,8 +8,10 @@ nav{
 }
 
 li{
-    padding: 15px;
+   padding: 0 30px 10px 0;
+   
 }
+
 
 .img-caravan{
     width: 180px;
@@ -20,3 +22,7 @@ li{
    @include  nav-busqueda()
 }
 
+.boton-nav:hover{
+    border-bottom: solid 3px $color-terciario;
+    transition: 0.2s;
+}
