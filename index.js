@@ -25,7 +25,7 @@ const contenedorTarjetasIndividuales = document.querySelector(".contenedor-tarje
 
 const seccionEpisodios = document.querySelector(".seccion-episodios")
 const botonEpisodios = document.querySelector("#boton-episodios")
-const contenedorTarjetasEpisodios = document.querySelector(".contenedor-tarjetas-episodios")
+const cardEpisodios = document.querySelector("#card-episodios")
 
 //Get endpoint personajes
 const traerInfoPersonajes= () =>{
@@ -43,11 +43,11 @@ const traerInfoEpisodios= () =>{
     fetch(endPointEpisodios)
     .then((res) =>  res.json())
     .then((data) => {
-      crearTarjeta(data)
+        crearTarjetaEpisodios(data)
     })
-  }
+}
   
-  traerInfoEpisodios()
+traerInfoEpisodios()
 
 
 //crear tarjetas en html de los personajes
@@ -72,6 +72,28 @@ const crearTarjeta = (data) =>{
 
 traerInfoPersonajes()
 
+
+//crear tarjetas en html de los episodios
+const crearTarjetaEpisodios = (data) =>{
+
+    const mostrarEnHtml = data.reduce ((acc, elemento) =>{
+
+        return acc + 
+        `
+        <div class="tarjeta-episodio" data-id="${elemento.episode_id}">
+        <p>Episodio Nro: ${elemento.episode}</p>
+        <p>Titulo: ${elemento.title}</p>
+        <p>Temporada: ${elemento.season}</p>
+        <p>Fecha estreno: ${elemento.air_date}</p>
+        <p>Personajes: ${elemento.characters}</p>
+        </div>
+        `
+    }, "")
+    cardEpisodios.innerHTML = mostrarEnHtml
+    
+}
+
+traerInfoEpisodios()
 
 
 
