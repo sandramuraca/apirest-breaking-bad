@@ -219,6 +219,32 @@ label {
   width: 600px;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 90px;
+  color: #EBD387;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 200;
+}
+
+.contenerdor-iconos-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 200px;
+}
+
+.boton-icono-footer {
+  color: #EBD387;
+  font-size: 20px;
+}
+
 .contenedor-paginador {
   display: flex;
   flex-direction: row;

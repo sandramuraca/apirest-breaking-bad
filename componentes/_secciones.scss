@@ -1,3 +1,4 @@
+
 .seccion-episodios{
     font-family: $tipografia-principal;
     color: $color-secundario;
@@ -23,3 +24,20 @@
     width: 600px;
 }
 
+footer{
+@include displayflex($direction:column);
+padding-top: 90px;
+color: $color-terciario;
+font-family: $tipografia-principal;
+font-weight: 200;
+}
+
+.contenerdor-iconos-footer{
+    @include displayflex($content:space-between);
+    width: 200px;
+}
+.boton-icono-footer{
+    color: $color-terciario;
+    font-size: 20px;
+    
+}
