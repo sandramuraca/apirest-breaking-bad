@@ -1,0 +1,6 @@
+.contenedor-paginador{
+    @include displayflex($content: space-between);
+    width: 400px;
+    margin: auto;
+    margin-bottom: 10px;
+}

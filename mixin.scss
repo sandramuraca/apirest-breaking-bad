@@ -6,7 +6,7 @@
     flex-wrap: wrap;
    }
    
-   @mixin card ($width: 180px, $height: 200px ){
+   @mixin card ($width: 180px, $height: 240px ){
        width: $width;
        height: $height;
        padding: 20px;
@@ -55,4 +55,12 @@
         height: 200 px;
         box-shadow: 5px 5px 12px -3px $color-terciario;
         font-weight: 200;
+    }
+
+    @mixin botones(){
+        background-color: $color-principal;
+        color: $color-secundario;
+        border:0;
+        font-size: 30px;
+        font-family: $tipografia-principal;
     }

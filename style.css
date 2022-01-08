@@ -23,7 +23,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .tarjeta {
   width: 180px;
-  height: 200px;
+  height: 240px;
   padding: 20px;
   margin: 15px;
   border: 2px solid #6E6A5E;
@@ -65,7 +65,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .tarjeta-episodio {
   width: 220px;
-  height: 200px;
+  height: 240px;
   padding: 20px;
   margin: 15px;
   border: 2px solid #6E6A5E;
@@ -88,7 +88,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .tarjeta-individual {
   width: 300px;
-  height: 200px;
+  height: 240px;
   padding: 20px;
   margin: 15px;
   border: 2px solid #6E6A5E;
@@ -103,23 +103,6 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   flex-wrap: wrap;
   height: 350px;
-}
-
-.boton-volver {
-  background-color: #54534f;
-  color: #EEE7CF;
-  border: 0;
-  font-size: 30px;
-  font-family: "Fira Sans", sans-serif;
-}
-
-span {
-  padding-right: 10px;
-}
-
-.boton-volver:hover {
-  border-bottom: solid 3px #EBD387;
-  transition: 0.2s;
 }
 
 nav {
@@ -216,6 +199,61 @@ label {
   text-align: center;
   font-weight: 400;
   padding-top: 150px;
+}
+
+.contenedor-paginador {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.boton-volver {
+  background-color: #54534f;
+  color: #EEE7CF;
+  border: 0;
+  font-size: 30px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+span {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.boton-volver:hover {
+  border-bottom: solid 3px #EBD387;
+  transition: 0.2s;
+}
+
+#anterior {
+  background-color: #54534f;
+  color: #EEE7CF;
+  border: 0;
+  font-size: 30px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+#siguiente {
+  background-color: #54534f;
+  color: #EEE7CF;
+  border: 0;
+  font-size: 30px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+#anterior:hover {
+  border-bottom: solid 3px #EBD387;
+  transition: 0.2s;
+}
+
+#siguiente:hover {
+  border-bottom: solid 3px #EBD387;
+  transition: 0.2s;
 }
 
 body {

@@ -48,14 +48,8 @@ const traerInfoPersonajes= () =>{
       console.log(data)
       crearTarjeta(data)
     })
-
-    
-//   fetch(endPointCharacters)
-//   .then((res) =>  res.json())
-//   .then((data) => {
-//     crearTarjeta(data)
-//   })
 }
+
 botonAnterior.onclick = () => {
     paginaActual--
     traerInfoPersonajes()
