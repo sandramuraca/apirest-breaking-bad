@@ -1,12 +1,3 @@
-/*
-PENDIENTE
-
-ver paginacion: https://breakingbadapi.com/api/characters?limit=10&offset=10 
-
-DOCUMENTACION: https://breakingbadapi.com/documentation
-
-SECCIONES CITAS Y MUERTES??*/
-
 
 //*****Seleccion elementos del Dom y Variables*******
 const UrlBase = "https://www.breakingbadapi.com/api/"
@@ -27,6 +18,7 @@ const inputBusqueda = document.querySelector("#input-busqueda")
 
 const botonAnterior = document.querySelector("#anterior")
 const botonSiguiente = document.querySelector("#siguiente")
+const contenedorPaginador = document.querySelector(".contenedor-paginador")
 
 const seccionPersonajes = document.querySelector(".seccion-personajes")
 const cardPersonajes = document.querySelector("#card-personajes")
@@ -55,15 +47,13 @@ const traerInfoPersonajes= () =>{
 botonAnterior.onclick = () => {
     paginaActual--
     traerInfoPersonajes()
-  }
+}
   
 botonSiguiente.onclick = () => {
     paginaActual++
     traerInfoPersonajes()
-  }
+}
   
-  traerInfoPersonajes()
-
 traerInfoPersonajes()
 
 //**********Get endpoint episodios************
@@ -123,47 +113,7 @@ const crearTarjetaEpisodios = (data) =>{
 traerInfoEpisodios()
 
 
-//***Interacciones con los botones nav y tarjeta individual****
-contenedorImgNav.onclick = () => {
-    hero.classList.remove("ocultar")
-    seccionBuscador.classList.add("ocultar")
-    seccionPersonajes.classList.add("ocultar")
-    seccionEpisodios.classList.add("ocultar")
-    contenedorTarjetasIndividuales.classList.add("ocultar")
-}
 
-// const botonInfo = document.querySelector(".boton-info")
-// const seccionInfoGeneral = document.querySelector(".info-general")
-botonInfo.onclick = () => {
-    hero.classList.add("ocultar")
-    seccionInfoGeneral.classList.remove("ocultar")
-}
-
-botonPersonajes.onclick = () => {
-    hero.classList.add("ocultar")
-    seccionBuscador.classList.remove("ocultar")
-    seccionPersonajes.classList.remove("ocultar")
-    seccionEpisodios.classList.add("ocultar")
-    cardPersonajes.classList.remove("ocultar")
-}
-
-botonEpisodios.onclick = () => {
-    hero.classList.add("ocultar")
-    seccionPersonajes.classList.add("ocultar")
-    seccionEpisodios.classList.remove("ocultar") 
-    seccionBuscador.classList.add("ocultar")
-    contenedorTarjetasIndividuales.classList.add("ocultar")
-}
-
-botonVolver.onclick = () => {
-    hero.classList.add("ocultar")
-    seccionBuscador.classList.remove("ocultar")
-    seccionPersonajes.classList.remove("ocultar")
-    seccionEpisodios.classList.add("ocultar")
-    cardPersonajes.classList.remove("ocultar")
-    //tarjetasIndividuales.classList.add("ocultar")
-    contenedorTarjetasIndividuales.classList.add("ocultar")
-}
 
 //*****busqueda por personajes en campo busqueda****
 const busquedaPersonajes = (busqueda) => {
@@ -172,15 +122,15 @@ const busquedaPersonajes = (busqueda) => {
         .then((res) => res.json())
         .then((data) => {
             crearTarjeta(data)
-
-        })
+    })
 }
 
 formBusqueda.onsubmit = (e) => {
     e.preventDefault()
     busquedaPersonajes(inputBusqueda.value)
+    
 }
-
+traerInfoPersonajes()
 
 //*******Card individual*******
 const verCardIndividual = (char_id) =>{
@@ -200,7 +150,7 @@ const verCardIndividual = (char_id) =>{
             <img id="imagen-personaje" src="${elemento.img}" alt="">
         </div>
         <p id="nombre-personaje"> <strong>Nombre:</strong> ${elemento.name}</p>
-        <p id="nickname-personaje"><strong>Nick Name:</strong> Nick Name:${elemento.nickname}</p>
+        <p id="nickname-personaje"><strong>Nick Name:</strong> ${elemento.nickname}</p>
         <p id="ocupacion-personaje"><strong>Ocupación:</strong>  ${elemento.occupation}</p>
         <p id="status-personaje"><strong>Status:</strong> ${elemento.status}</p>
         </div>
@@ -220,8 +170,51 @@ const clickTarjetaPersonaje = () =>{
             const idPersonajes = cards[i].dataset.id;
             contenedorTarjetasIndividuales.classList.remove("ocultar")
             cardPersonajes.classList.add("ocultar")
+            contenedorPaginador.classList.add("ocultar")
             verCardIndividual(idPersonajes);
         }
     }
 } 
 
+
+//***Interacciones con los botones nav y tarjeta individual****
+
+const addOcultar = () =>{
+    hero.classList.add("ocultar")
+    seccionBuscador.classList.add("ocultar")
+    seccionPersonajes.classList.add("ocultar")
+    seccionEpisodios.classList.add("ocultar")
+    contenedorTarjetasIndividuales.classList.add("ocultar")
+    seccionInfoGeneral.classList.add("ocultar")
+    
+}
+
+contenedorImgNav.onclick = () => {
+    addOcultar()
+    hero.classList.remove("ocultar")
+}
+
+botonInfo.onclick = () => {
+    addOcultar()
+    seccionInfoGeneral.classList.remove("ocultar")
+}
+
+botonPersonajes.onclick = () => {
+    addOcultar()
+    cardPersonajes.classList.remove("ocultar")
+    seccionBuscador.classList.remove("ocultar")
+    seccionPersonajes.classList.remove("ocultar")
+}
+
+botonEpisodios.onclick = () => {
+    addOcultar()
+    seccionEpisodios.classList.remove("ocultar") 
+}
+
+botonVolver.onclick = () => {
+    addOcultar()
+    contenedorPaginador.classList.remove("ocultar")
+    cardPersonajes.classList.remove("ocultar")
+    seccionBuscador.classList.remove("ocultar")
+    seccionPersonajes.classList.remove("ocultar")
+}

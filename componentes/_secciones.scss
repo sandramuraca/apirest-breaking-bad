@@ -10,19 +10,16 @@
 }
 
 .info-general{
-    @include displayflex($content: justify-content);
+    @include displayflex($content: space-around);
     font-family: $tipografia-principal;
     color: $color-secundario;
     font-size: 20px;
     font-weight: 200;
     text-align: justify;
+    padding-top: 180px;
 }
 
 .contenedor-parrafo{
     width: 600px;
-    padding-top: 180px;
-    margin: auto;
-
-    
 }
 

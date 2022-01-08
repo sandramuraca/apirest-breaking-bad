@@ -28,9 +28,9 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 15px;
   border: 2px solid #6E6A5E;
   border-radius: 5px;
-  color: #54534f;
+  color: #0e0d0d;
   font-family: "Fira Sans", sans-serif;
-  background-color: #d6dbd9;
+  background-color: #eaecec;
   box-shadow: 5px 5px 12px -3px #EBD387;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 160px;
   height: 160px;
   overflow: hidden;
-  box-shadow: 5px 5px 12px -3px #54534f;
+  box-shadow: 5px 5px 12px -3px #0e0d0d;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,9 +70,9 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 15px;
   border: 2px solid #6E6A5E;
   border-radius: 5px;
-  color: #54534f;
+  color: #0e0d0d;
   font-family: "Fira Sans", sans-serif;
-  background-color: #d6dbd9;
+  background-color: #eaecec;
   box-shadow: 5px 5px 12px -3px #EBD387;
   font-size: 15px;
   height: auto;
@@ -87,15 +87,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .tarjeta-individual {
-  width: 300px;
+  width: 350px;
   height: 240px;
   padding: 20px;
   margin: 15px;
   border: 2px solid #6E6A5E;
   border-radius: 5px;
-  color: #54534f;
+  color: #0e0d0d;
   font-family: "Fira Sans", sans-serif;
-  background-color: #d6dbd9;
+  background-color: #eaecec;
   box-shadow: 5px 5px 12px -3px #EBD387;
   display: flex;
   flex-direction: column;
@@ -111,7 +111,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #54534f;
+  background-color: #0e0d0d;
   position: fixed;
   z-index: 3;
   padding-bottom: 20px;
@@ -169,7 +169,7 @@ label {
 
 .input-busqueda {
   margin-top: 180px;
-  background-color: #54534f;
+  background-color: #0e0d0d;
   border: 0;
   border-bottom: solid 3px #EBD387;
   font-family: "Fira Sans", sans-serif;
@@ -204,7 +204,7 @@ label {
 .info-general {
   display: flex;
   flex-direction: row;
-  justify-content: justify-content;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   font-family: "Fira Sans", sans-serif;
@@ -212,12 +212,11 @@ label {
   font-size: 20px;
   font-weight: 200;
   text-align: justify;
+  padding-top: 180px;
 }
 
 .contenedor-parrafo {
   width: 600px;
-  padding-top: 180px;
-  margin: auto;
 }
 
 .contenedor-paginador {
@@ -228,11 +227,11 @@ label {
   flex-wrap: wrap;
   width: 400px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .boton-volver {
-  background-color: #54534f;
+  background-color: #0e0d0d;
   color: #EEE7CF;
   border: 0;
   font-size: 30px;
@@ -250,7 +249,7 @@ span {
 }
 
 #anterior {
-  background-color: #54534f;
+  background-color: #0e0d0d;
   color: #EEE7CF;
   border: 0;
   font-size: 30px;
@@ -258,7 +257,7 @@ span {
 }
 
 #siguiente {
-  background-color: #54534f;
+  background-color: #0e0d0d;
   color: #EEE7CF;
   border: 0;
   font-size: 30px;
@@ -276,7 +275,7 @@ span {
 }
 
 body {
-  background-color: #54534f;
+  background-color: #0e0d0d;
 }
 
 .ocultar {

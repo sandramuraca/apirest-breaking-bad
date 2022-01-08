@@ -31,7 +31,7 @@
 }
 
 .tarjeta-individual{
-    @include  card($width: 300px);
+    @include  card($width: 350px);
     @include displayflex($direction:column, $content: space-between);
     height: 350px;
 }
