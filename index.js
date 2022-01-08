@@ -13,6 +13,9 @@ const UrlBase = "https://www.breakingbadapi.com/api/"
 const endPointCharacters = "https://breakingbadapi.com/api/characters"
 const endPointEpisodios = "https://breakingbadapi.com/api/episodes"
 
+const botonInfo = document.querySelector("#boton-info")
+const seccionInfoGeneral = document.querySelector(".info-general")
+
 const botonPersonajes = document.querySelector("#boton-personajes")
 const botonEpisodios = document.querySelector("#boton-episodios")
 const contenedorImgNav = document.querySelector(".contenedor-img-nav")
@@ -38,7 +41,6 @@ const seccionEpisodios = document.querySelector(".seccion-episodios")
 const cardEpisodios = document.querySelector("#card-episodios")
 
 //*******Get endpoint personajes***********
-
 let paginaActual= 0
 const traerInfoPersonajes= () =>{
     fetch(`https://www.breakingbadapi.com/api/characters?limit=5&offset=${paginaActual * 5}`)
@@ -128,6 +130,13 @@ contenedorImgNav.onclick = () => {
     seccionPersonajes.classList.add("ocultar")
     seccionEpisodios.classList.add("ocultar")
     contenedorTarjetasIndividuales.classList.add("ocultar")
+}
+
+// const botonInfo = document.querySelector(".boton-info")
+// const seccionInfoGeneral = document.querySelector(".info-general")
+botonInfo.onclick = () => {
+    hero.classList.add("ocultar")
+    seccionInfoGeneral.classList.remove("ocultar")
 }
 
 botonPersonajes.onclick = () => {

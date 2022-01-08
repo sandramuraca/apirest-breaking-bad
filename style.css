@@ -201,6 +201,25 @@ label {
   padding-top: 150px;
 }
 
+.info-general {
+  display: flex;
+  flex-direction: row;
+  justify-content: justify-content;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Fira Sans", sans-serif;
+  color: #EEE7CF;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: justify;
+}
+
+.contenedor-parrafo {
+  width: 600px;
+  padding-top: 180px;
+  margin: auto;
+}
+
 .contenedor-paginador {
   display: flex;
   flex-direction: row;

@@ -8,3 +8,21 @@
     font-weight: 400;
     padding-top: 150px;
 }
+
+.info-general{
+    @include displayflex($content: justify-content);
+    font-family: $tipografia-principal;
+    color: $color-secundario;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: justify;
+}
+
+.contenedor-parrafo{
+    width: 600px;
+    padding-top: 180px;
+    margin: auto;
+
+    
+}
+
