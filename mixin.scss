@@ -6,10 +6,9 @@
     flex-wrap: wrap;
    }
    
-   //no toma el width como parametro - lo quiero cambiar en la card de episodios
-   @mixin card ($width: 180px,){
-       width: 180px;
-       height: 300px;
+   @mixin card ($width: 180px, $height: 200px ){
+       width: $width;
+       height: $height;
        padding: 20px;
        margin: 15px;
        border: 2px solid $color-cuaternario;
@@ -22,20 +21,22 @@
    
    @mixin imagen-card(){
        width: 100%;
-       box-shadow: 5px 5px 12px -3px $color-principal;
+       
    }
    
    @mixin contenedor-imagen(){
        width: 160px;
+       height: 160px;
+       overflow: hidden;
+       box-shadow: 5px 5px 12px -3px $color-principal;
    }
 
    @mixin imagen-nav(){
     width: 100%;
-}
+    }
 
     @mixin contenedor-imagen-nav(){
     width: 100px;
-    
     }
 
     @mixin nav-busqueda(){

@@ -24,6 +24,33 @@
 .tarjeta-episodio{
     @include  card($width: 220px);
     font-size: 15px;
-    width: 220px;
+    //width: 220px;
     height: auto;
+}
+
+.contenedor-tarjetas-individuales{
+    @include displayflex();
+}
+
+.tarjeta-individual{
+    @include  card($width: 300px);
+    @include displayflex($direction:column, $content: space-between);
+    height: 350px;
+}
+
+.boton-volver{
+   background-color: $color-principal;
+   color: $color-secundario;
+   border:0;
+   font-size: 30px;
+   font-family: $tipografia-principal;
+}
+
+span{
+    padding-right:10px;
+}
+
+.boton-volver:hover{
+    border-bottom: solid 3px $color-terciario;
+    transition: 0.2s;
 }

@@ -1,12 +1,11 @@
 /*
 PENDIENTE
-Al hacer click en cada tarjeta,
-La lista de tarjetas debe ocultarse.
-Debes hacer un fetch al recurso específico usando el id que te da la api
-Debes hacer una tarjeta de detalles del recurso
-Seguí el código de la clase anterior para guiarte.*/
 
-//**ver paginacion:****** https://breakingbadapi.com/api/characters?limit=10&offset=10 */
+ver paginacion: https://breakingbadapi.com/api/characters?limit=10&offset=10 
+
+DOCUMENTACION: https://breakingbadapi.com/documentation
+
+SECCIONES CITAS Y MUERTES??*/
 
 
 //*****Seleccion elementos del Dom y Variables*******
@@ -28,6 +27,7 @@ const cardPersonajes = document.querySelector("#card-personajes")
 
 const tarjetasIndividuales = document.querySelector(".tarjetas-individuales")
 const contenedorTarjetasIndividuales = document.querySelector(".contenedor-tarjetas-individuales")
+const botonVolver = document.querySelector(".boton-volver")
 
 
 const seccionEpisodios = document.querySelector(".seccion-episodios")
@@ -101,21 +101,21 @@ const crearTarjetaEpisodios = (data) =>{
 traerInfoEpisodios()
 
 
-
-//Interacciones con los botones del nav
-
+//***Interacciones con los botones nav y tarjeta individual****
 contenedorImgNav.onclick = () => {
     hero.classList.remove("ocultar")
     seccionBuscador.classList.add("ocultar")
     seccionPersonajes.classList.add("ocultar")
     seccionEpisodios.classList.add("ocultar")
+    contenedorTarjetasIndividuales.classList.add("ocultar")
 }
 
 botonPersonajes.onclick = () => {
     hero.classList.add("ocultar")
     seccionBuscador.classList.remove("ocultar")
     seccionPersonajes.classList.remove("ocultar")
-    seccionEpisodios.classList.add("ocultar") 
+    seccionEpisodios.classList.add("ocultar")
+    cardPersonajes.classList.remove("ocultar")
 }
 
 botonEpisodios.onclick = () => {
@@ -123,11 +123,21 @@ botonEpisodios.onclick = () => {
     seccionPersonajes.classList.add("ocultar")
     seccionEpisodios.classList.remove("ocultar") 
     seccionBuscador.classList.add("ocultar")
+    contenedorTarjetasIndividuales.classList.add("ocultar")
 }
 
+botonVolver.onclick = () => {
+    hero.classList.add("ocultar")
+    seccionBuscador.classList.remove("ocultar")
+    seccionPersonajes.classList.remove("ocultar")
+    seccionEpisodios.classList.add("ocultar")
+    cardPersonajes.classList.remove("ocultar")
+    //tarjetasIndividuales.classList.add("ocultar")
+    contenedorTarjetasIndividuales.classList.add("ocultar")
+}
 
 //*****busqueda por personajes en campo busqueda****
-function busquedaPersonajes(busqueda) {
+const busquedaPersonajes = (busqueda) => {
 
     fetch(`https://breakingbadapi.com/api/characters?name=${busqueda}`)
         .then((res) => res.json())
@@ -143,11 +153,6 @@ formBusqueda.onsubmit = (e) => {
 }
 
 
-/*
-variables
-tarjetasIndividuales  
-contenedorTarjetasIndividuales*/
-
 //*******Card individual*******
 const verCardIndividual = (char_id) =>{
     fetch(`https://breakingbadapi.com/api/characters/${char_id}`)
@@ -157,19 +162,21 @@ const verCardIndividual = (char_id) =>{
 
        console.log("ver tarjeta individual")
 
-       const crearTarjetaIndiviual = () =>{
+       const elemento = data[0]
+
+       const crearTarjetaIndiviual = 
         `
         <div class="tarjeta-individual" data-id="${elemento.char_id}">
         <div class="contenedor-imagen">
             <img id="imagen-personaje" src="${elemento.img}" alt="">
         </div>
         <p id="nombre-personaje"> <strong>Nombre:</strong> ${elemento.name}</p>
-        <p id="nickname-personaje">Nick Name:${elemento.nickname}</p>
-        <p id="ocupacion-personaje">Ocupación: ${elemento.occupation}</p>
-        <p id="status-personaje">Status: ${elemento.status}</p>
+        <p id="nickname-personaje"><strong>Nick Name:</strong> Nick Name:${elemento.nickname}</p>
+        <p id="ocupacion-personaje"><strong>Ocupación:</strong>  ${elemento.occupation}</p>
+        <p id="status-personaje"><strong>Status:</strong> ${elemento.status}</p>
         </div>
        `
-       }
+       
        tarjetasIndividuales.innerHTML = crearTarjetaIndiviual
 
     })
