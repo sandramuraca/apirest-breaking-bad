@@ -22,8 +22,12 @@ const seccionBuscador = document.querySelector(".seccion-buscador")
 const formBusqueda = document.querySelector("#form-busqueda")
 const inputBusqueda = document.querySelector("#input-busqueda")
 
+const botonAnterior = document.querySelector("#anterior")
+const botonSiguiente = document.querySelector("#siguiente")
+
 const seccionPersonajes = document.querySelector(".seccion-personajes")
 const cardPersonajes = document.querySelector("#card-personajes")
+
 
 const tarjetasIndividuales = document.querySelector(".tarjetas-individuales")
 const contenedorTarjetasIndividuales = document.querySelector(".contenedor-tarjetas-individuales")
@@ -34,13 +38,35 @@ const seccionEpisodios = document.querySelector(".seccion-episodios")
 const cardEpisodios = document.querySelector("#card-episodios")
 
 //*******Get endpoint personajes***********
+
+let paginaActual= 0
 const traerInfoPersonajes= () =>{
-  fetch(endPointCharacters)
-  .then((res) =>  res.json())
-  .then((data) => {
-    crearTarjeta(data)
-  })
+    fetch(`https://www.breakingbadapi.com/api/characters?limit=5&offset=${paginaActual * 5}`)
+
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      crearTarjeta(data)
+    })
+
+    
+//   fetch(endPointCharacters)
+//   .then((res) =>  res.json())
+//   .then((data) => {
+//     crearTarjeta(data)
+//   })
 }
+botonAnterior.onclick = () => {
+    paginaActual--
+    traerInfoPersonajes()
+  }
+  
+botonSiguiente.onclick = () => {
+    paginaActual++
+    traerInfoPersonajes()
+  }
+  
+  traerInfoPersonajes()
 
 traerInfoPersonajes()
 
