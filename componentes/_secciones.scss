@@ -25,21 +25,21 @@
 }
 
 footer{
-@include displayflex($direction:column);
-padding-top: 90px;
+@include displayflex($direction: column);
 color: $color-terciario;
 font-family: $tipografia-principal;
 font-weight: 200;
 position: absolute;
+left:30%;
 bottom: 20px;
 }
 
 .contenerdor-iconos-footer{
     @include displayflex($content:space-between);
-    width: 200px;
+    width: 40%;
+    margin: auto;
 }
 .boton-icono-footer{
     color: $color-terciario;
     font-size: 20px;
-    
 }
