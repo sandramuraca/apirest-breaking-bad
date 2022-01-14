@@ -12,9 +12,15 @@ li{
    
 }
 
+body:hover .img-caravan{
+    transform: translateX(350px);
+}
 
 .img-caravan{
     width: 180px;
+    transition: 1s;
+    position: relative;
+    left: -350px;
 }
 
 .botones-nav{

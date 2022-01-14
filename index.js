@@ -32,6 +32,8 @@ const botonVolver = document.querySelector(".boton-volver")
 const seccionEpisodios = document.querySelector(".seccion-episodios")
 const cardEpisodios = document.querySelector("#card-episodios")
 
+const footer = document.querySelector("#footer")
+
 //*******Get endpoint personajes***********
 let paginaActual= 0
 const traerInfoPersonajes= () =>{
@@ -186,12 +188,13 @@ const addOcultar = () =>{
     seccionEpisodios.classList.add("ocultar")
     contenedorTarjetasIndividuales.classList.add("ocultar")
     seccionInfoGeneral.classList.add("ocultar")
-    
+    footer.classList.add("ocultar")
 }
 
 contenedorImgNav.onclick = () => {
     addOcultar()
     hero.classList.remove("ocultar")
+    footer.classList.remove("ocultar")
 }
 
 botonInfo.onclick = () => {

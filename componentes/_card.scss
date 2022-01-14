@@ -4,12 +4,18 @@
 
 .tarjeta {
     @include  card();
-    @include displayflex($direction:column, $content: space-between)
+    @include displayflex($direction:column, $content: space-between);
+    transition: 0.3s;
+}
+
+.tarjeta:hover{
+    transform: scale(1.1);
 }
 
 .contenedor-imagen{
     @include contenedor-imagen();
     @include displayflex($aling: top);
+    
 }
 
 #imagen-personaje{
