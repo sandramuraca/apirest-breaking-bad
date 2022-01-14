@@ -23,3 +23,8 @@ Los íconos utilizados fueron extraidos de Fontawesome.
 Las imagenes fueron descargadas desde la web.
 
 **Deployado en**: [Buscador Breaking Bad](https://sandramuraca.github.io/apirest-breaking-bad/)
+
+**Tip**: para trabajar con estos archivos en forma local, luego de clonar el repositorio, ejecutar los siguientes comandos:
+
+## npm install
+## npm start
