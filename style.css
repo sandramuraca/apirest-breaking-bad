@@ -2,6 +2,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@200;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400&family=Inter:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400&family=IM+Fell+DW+Pica&family=Yuji+Syuku&display=swap");
+@media (max-width: 913px) {
+  .img-hero {
+    display: none;
+  }
+
+  .img-hero-secundaria.ocultar {
+    display: block;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: 200px;
+  }
+
+  #footer {
+    position: absolute;
+    left: 15%;
+    bottom: 80px;
+  }
+}
+@media (max-width: 769px) {
+  .img-hero-secundaria.ocultar {
+    position: relative;
+    top: 300px;
+  }
+}
+@media (max-width: 541px) {
+  .img-hero-secundaria.ocultar {
+    width: 40%;
+    position: relative;
+    top: 180px;
+  }
+
+  #footer {
+    font-size: 10px;
+    position: absolute;
+    left: 15%;
+    bottom: 20px;
+  }
+
+  #contenedor-botones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .boton-nav {
+    font-size: 20px;
+  }
+
+  .nav {
+    padding-bottom: 1px;
+  }
+}
+@media (max-width: 415px) {
+  .img-hero-secundaria.ocultar {
+    width: 45%;
+    position: relative;
+    top: 320px;
+  }
+
+  #footer {
+    font-size: 10px;
+    position: absolute;
+    left: 5%;
+    bottom: 20px;
+  }
+}
+@media (max-width: 391px) {
+  #footer {
+    font-size: 9px;
+    position: absolute;
+    left: 5%;
+    bottom: 15px;
+  }
+}
 .contenedor-tarjetas {
   display: flex;
   flex-direction: row;
