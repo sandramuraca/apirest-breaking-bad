@@ -141,9 +141,7 @@ const verCardIndividual = (char_id) =>{
     .then((data) =>{
        console.log(data)
 
-       console.log("ver tarjeta individual")
-
-       const elemento = data[0]
+        const elemento = data[0]
 
        const crearTarjetaIndiviual = 
         `
