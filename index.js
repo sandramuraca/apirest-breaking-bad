@@ -1,6 +1,9 @@
 
 //*****Seleccion elementos del Dom y Variables*******
+// No empieces variables con mayuscula, nunca, salvo que sean componentes de React
+// Declaras UrlBase pero nunca la usás
 const UrlBase = "https://www.breakingbadapi.com/api/"
+// esta variable endPointCharacters nunca se usa
 const endPointCharacters = "https://breakingbadapi.com/api/characters"
 const endPointEpisodios = "https://breakingbadapi.com/api/episodes"
 
@@ -35,12 +38,14 @@ const cardEpisodios = document.querySelector("#card-episodios")
 const footer = document.querySelector("#footer")
 
 //*******Get endpoint personajes***********
+// deja siempre espacio entre operadores: let paginaActual = 0
 let paginaActual= 0
 const traerInfoPersonajes= () =>{
     fetch(`https://www.breakingbadapi.com/api/characters?limit=5&offset=${paginaActual * 5}`)
 
     .then(res => res.json())
     .then(data => {
+        // no dejes console log
       console.log(data)
       crearTarjeta(data)
     })
@@ -56,6 +61,8 @@ botonSiguiente.onclick = () => {
     traerInfoPersonajes()
 }
   
+// todas estas funciones que se ejecutan apenas carga la página deberian estar al final de todo, 
+// para que el flujo de ejecución sea más claro
 traerInfoPersonajes()
 
 //**********Get endpoint episodios************
@@ -72,6 +79,9 @@ traerInfoEpisodios()
 
 //*********crear tarjetas en html de los personajes***********
 const crearTarjeta = (data) =>{
+
+    // Acá podés usar el retorno implícito:
+    // const mostrarEnHtml = data.reduce ((acc, elemento) => acc + 
 
     const mostrarEnHtml = data.reduce ((acc, elemento) =>{
 
@@ -95,7 +105,7 @@ traerInfoPersonajes()
 
 //********crear tarjetas en html de los episodios********
 const crearTarjetaEpisodios = (data) =>{
-
+    // usa retorno implicito aca tambien
     const mostrarEnHtml = data.reduce ((acc, elemento) =>{
 
         return acc + 
@@ -135,10 +145,12 @@ formBusqueda.onsubmit = (e) => {
 traerInfoPersonajes()
 
 //*******Card individual*******
+// no uses _ para separar palabras en variables. usa camelCase
 const verCardIndividual = (char_id) =>{
     fetch(`https://breakingbadapi.com/api/characters/${char_id}`)
     .then((res) => res.json())
     .then((data) =>{
+        // no dejes console log
        console.log(data)
 
         const elemento = data[0]
