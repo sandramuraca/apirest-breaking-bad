@@ -1,3 +1,5 @@
+/* Es preferible importar las tipografias en el HTML (su carga es mas rapida) */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 
@@ -12,7 +14,8 @@
 @import "componentes/paginador";
 @import "componentes/botones";
 
-
+// Recordá la prolijidad en css, aquí estas usando mal el tabulado, debes dejar un espacio
+// entre el selector y {, debes ser consistente con los saltos de linea entre selectores
 body{
     background-color:$color-principal;
     margin: 0;

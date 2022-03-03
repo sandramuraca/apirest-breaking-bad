@@ -6,6 +6,7 @@
     flex-wrap: wrap;
    }
    
+//    ojo con el tabulado
    @mixin card ($width: 180px, $height: 240px ){
        width: $width;
        height: $height;
@@ -30,6 +31,7 @@
        box-shadow: 5px 5px 12px -3px $color-principal;
    }
 
+//    para que tenes dos mixin que hacen lo mismo?
    @mixin imagen-nav(){
     width: 100%;
     }

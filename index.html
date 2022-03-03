@@ -11,6 +11,10 @@
 </head>
 
 <body>
+
+    <!-- chrome bloquea el audio con autoplay, asi que esto no funcionaria para los usuarios de chrome. 
+    A pesar de que me encanta la idea, en general no se recomienda para evitarle sorpresas al usuario: 
+    mejor un botón que puedan apretar y suene la música.  -->
     <audio src="./assets/[ONTIVA.COM] Breaking Bad Full Intro Title Sequence-64k.mp3" autoplay></audio>
 
     <!-- Barra navegación -->
@@ -26,6 +30,8 @@
     <!--Main  -->
     <main class="hero">
         <div class="contenedor-img-hero">
+            <!-- el alt debe ser una oración que pueda ser leída y entendida. "Walter y Jessie en el desierto", 
+            por ejemplo.  -->
             <img src="./assets/walter-jessie4.jpg" alt="desierto-walter-jessie" class="img-hero">
             <img class="ocultar img-hero-secundaria" src="./assets/walter.jpg" alt="walter">
         </div>
@@ -33,8 +39,12 @@
 
     <!-- Sección información general -->
     <section class="info-general ocultar">
+        <!-- contenerdor deberia ser contenedor. No usas esta clase en css, no cumple ninguna función -->
         <div class="contenerdor-img-info"><img src="./assets/poster.jpg" alt=""></div>
         <div class="contenedor-parrafo">
+            <!-- No se considera buena práctica utilizar etiquetas de html cuya única función es proveer estilado. 
+                Esta es una responsabilidad de CSS: no debemos mezclar responsabilidades.
+                 Siempre que sea posible hacer algo con CSS, debemos hacerlo allí.  -->
             <p><strong>Breaking Bad</strong> es una serie de televisión estadounidense creada y producida por Vince Gilligan. Situada y producida en Albuquerque, Nuevo México, consiste en la historia de <strong>Walter White</strong>, un profesor de química al que diagnostican un cáncer de pulmón inoperable.</p>
             <br>
             <p>Al concluir que su enfermedad iba a arruinar financieramente a su familia, él toma una decisión con el fin de ganar más dinero durante el tiempo que le queda y transforma una vieja Caravan en un laboratorio  sobre ruedas.</p>
@@ -50,7 +60,9 @@
     <!-- Campo de búsqueda -->
     <section class="seccion-buscador ocultar">
         <form action="" id="form-busqueda">
+            <!-- el for debe ser igual al id del elemento-->
             <label for=""> Buscar Personaje <span><i class="fas fa-search"></i></span></label>
+            <!-- el name no debe estar vacio  -->
             <input type="text" name="" id="input-busqueda" placeholder="Escriba aqui el nombre del personaje" size="50" class="input-busqueda">
         </form>
     </section>
@@ -84,6 +96,7 @@
         
             <div class="contenerdor-iconos-footer">
                 <div>
+                    <!-- Faltan aria-label aca, para identificar al lector de pantalla qué hacen estos links -->
                     <a class="boton-icono-footer" href="https://github.com/sandramuraca" target="blanck" >
                         <i class="icono-redes-footer fab fa-github-alt"></i>
                     </a>
