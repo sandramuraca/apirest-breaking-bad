@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 
 @import "mixin";
 @import "variables";
@@ -12,19 +11,23 @@
 @import "componentes/paginador";
 @import "componentes/botones";
 
-
-body{
-    background-color:$color-principal;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  
-  p, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-.ocultar{
-    display: none;
+body {
+  background-color: $color-principal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+.ocultar {
+  display: none;
+}

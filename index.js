@@ -1,82 +1,81 @@
-
 //*****Seleccion elementos del Dom y Variables*******
-const UrlBase = "https://www.breakingbadapi.com/api/"
-const endPointCharacters = "https://breakingbadapi.com/api/characters"
-const endPointEpisodios = "https://breakingbadapi.com/api/episodes"
+const UrlBase = "https://www.breakingbadapi.com/api/";
+const endPointEpisodios = "https://breakingbadapi.com/api/episodes";
 
-const botonInfo = document.querySelector("#boton-info")
-const seccionInfoGeneral = document.querySelector(".info-general")
+const botonInfo = document.querySelector("#boton-info");
+const seccionInfoGeneral = document.querySelector(".info-general");
 
-const botonPersonajes = document.querySelector("#boton-personajes")
-const botonEpisodios = document.querySelector("#boton-episodios")
-const contenedorImgNav = document.querySelector(".contenedor-img-nav")
+const botonPersonajes = document.querySelector("#boton-personajes");
+const botonEpisodios = document.querySelector("#boton-episodios");
+const contenedorImgNav = document.querySelector(".contenedor-img-nav");
 
-const hero = document.querySelector(".hero")
-const seccionBuscador = document.querySelector(".seccion-buscador")
-const formBusqueda = document.querySelector("#form-busqueda")
-const inputBusqueda = document.querySelector("#input-busqueda")
+const hero = document.querySelector(".hero");
+const seccionBuscador = document.querySelector(".seccion-buscador");
+const formBusqueda = document.querySelector("#form-busqueda");
+const inputBusqueda = document.querySelector("#input-busqueda");
 
-const botonAnterior = document.querySelector("#anterior")
-const botonSiguiente = document.querySelector("#siguiente")
-const contenedorPaginador = document.querySelector(".contenedor-paginador")
+const botonAnterior = document.querySelector("#anterior");
+const botonSiguiente = document.querySelector("#siguiente");
+const contenedorPaginador = document.querySelector(".contenedor-paginador");
 
-const seccionPersonajes = document.querySelector(".seccion-personajes")
-const cardPersonajes = document.querySelector("#card-personajes")
+const seccionPersonajes = document.querySelector(".seccion-personajes");
+const cardPersonajes = document.querySelector("#card-personajes");
 
+const tarjetasIndividuales = document.querySelector(".tarjetas-individuales");
+const contenedorTarjetasIndividuales = document.querySelector(
+  ".contenedor-tarjetas-individuales"
+);
+const botonVolver = document.querySelector(".boton-volver");
 
-const tarjetasIndividuales = document.querySelector(".tarjetas-individuales")
-const contenedorTarjetasIndividuales = document.querySelector(".contenedor-tarjetas-individuales")
-const botonVolver = document.querySelector(".boton-volver")
+const seccionEpisodios = document.querySelector(".seccion-episodios");
+const cardEpisodios = document.querySelector("#card-episodios");
 
-
-const seccionEpisodios = document.querySelector(".seccion-episodios")
-const cardEpisodios = document.querySelector("#card-episodios")
-
-const footer = document.querySelector("#footer")
+const footer = document.querySelector("#footer");
 
 //*******Get endpoint personajes***********
-let paginaActual= 0
-const traerInfoPersonajes= () =>{
-    fetch(`https://www.breakingbadapi.com/api/characters?limit=5&offset=${paginaActual * 5}`)
-
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      crearTarjeta(data)
-    })
-}
+let paginaActual = 0;
+const traerInfoPersonajes = () => {
+  fetch(
+    `https://www.breakingbadapi.com/api/characters?limit=5&offset=${
+      paginaActual * 5
+    }`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      crearTarjeta(data);
+    });
+};
 
 botonAnterior.onclick = () => {
-    paginaActual--
-    traerInfoPersonajes()
-}
-  
+  paginaActual--;
+  traerInfoPersonajes();
+};
+
 botonSiguiente.onclick = () => {
-    paginaActual++
-    traerInfoPersonajes()
-}
-  
-traerInfoPersonajes()
+  paginaActual++;
+  traerInfoPersonajes();
+};
+
+traerInfoPersonajes();
 
 //**********Get endpoint episodios************
-const traerInfoEpisodios= () =>{
-    fetch(endPointEpisodios)
-    .then((res) =>  res.json())
+const traerInfoEpisodios = () => {
+  fetch(endPointEpisodios)
+    .then((res) => res.json())
     .then((data) => {
-        crearTarjetaEpisodios(data)
-    })
-}
-  
-traerInfoEpisodios()
+      crearTarjetaEpisodios(data);
+    });
+};
 
+traerInfoEpisodios();
 
 //*********crear tarjetas en html de los personajes***********
-const crearTarjeta = (data) =>{
-
-    const mostrarEnHtml = data.reduce ((acc, elemento) =>{
-
-        return acc + 
-        `
+const crearTarjeta = (data) => {
+  const mostrarEnHtml = data.reduce((acc, elemento) => {
+    return (
+      acc +
+      `
         <div class="tarjeta" data-id="${elemento.char_id}">
         <div class="contenedor-imagen">
             <img id="imagen-personaje" src="${elemento.img}" alt="">
@@ -85,21 +84,20 @@ const crearTarjeta = (data) =>{
         
         </div>
         `
-    }, "")
-    cardPersonajes.innerHTML = mostrarEnHtml
-    clickTarjetaPersonaje()  
-}
+    );
+  }, "");
+  cardPersonajes.innerHTML = mostrarEnHtml;
+  clickTarjetaPersonaje();
+};
 
-traerInfoPersonajes()
-
+traerInfoPersonajes();
 
 //********crear tarjetas en html de los episodios********
-const crearTarjetaEpisodios = (data) =>{
-
-    const mostrarEnHtml = data.reduce ((acc, elemento) =>{
-
-        return acc + 
-        `
+const crearTarjetaEpisodios = (data) => {
+  const mostrarEnHtml = data.reduce((acc, elemento) => {
+    return (
+      acc +
+      `
         <div class="tarjeta-episodio" data-id="${elemento.episode_id}" >
         <p style="text-align: center"><strong>Episodio Nro: </strong>${elemento.episode}</p>
         <p> <strong>Titulo:</strong>  ${elemento.title}</p>
@@ -108,43 +106,37 @@ const crearTarjetaEpisodios = (data) =>{
         <p><strong>Personajes:</strong> ${elemento.characters}</p>
         </div>
         `
-    }, "")
-    cardEpisodios.innerHTML = mostrarEnHtml
-    
-}
-traerInfoEpisodios()
-
-
-
+    );
+  }, "");
+  cardEpisodios.innerHTML = mostrarEnHtml;
+};
+traerInfoEpisodios();
 
 //*****busqueda por personajes en campo busqueda****
 const busquedaPersonajes = (busqueda) => {
-
-    fetch(`https://breakingbadapi.com/api/characters?name=${busqueda}`)
-        .then((res) => res.json())
-        .then((data) => {
-            crearTarjeta(data)
-    })
-}
+  fetch(`https://breakingbadapi.com/api/characters?name=${busqueda}`)
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjeta(data);
+    });
+};
 
 formBusqueda.onsubmit = (e) => {
-    e.preventDefault()
-    busquedaPersonajes(inputBusqueda.value)
-    
-}
-traerInfoPersonajes()
+  e.preventDefault();
+  busquedaPersonajes(inputBusqueda.value);
+};
+traerInfoPersonajes();
 
 //*******Card individual*******
-const verCardIndividual = (char_id) =>{
-    fetch(`https://breakingbadapi.com/api/characters/${char_id}`)
+const verCardIndividual = (char_id) => {
+  fetch(`https://breakingbadapi.com/api/characters/${char_id}`)
     .then((res) => res.json())
-    .then((data) =>{
-       console.log(data)
+    .then((data) => {
+      console.log(data);
 
-        const elemento = data[0]
+      const elemento = data[0];
 
-       const crearTarjetaIndiviual = 
-        `
+      const crearTarjetaIndiviual = `
         <div class="tarjeta-individual" data-id="${elemento.char_id}">
         <div class="contenedor-imagen">
             <img id="imagen-personaje" src="${elemento.img}" alt="">
@@ -154,68 +146,64 @@ const verCardIndividual = (char_id) =>{
         <p id="ocupacion-personaje"><strong>Ocupación:</strong>  ${elemento.occupation}</p>
         <p id="status-personaje"><strong>Status:</strong> ${elemento.status}</p>
         </div>
-       `
-       
-       tarjetasIndividuales.innerHTML = crearTarjetaIndiviual
+       `;
 
-    })
-}
+      tarjetasIndividuales.innerHTML = crearTarjetaIndiviual;
+    });
+};
 
-const clickTarjetaPersonaje = () =>{
-    const cards = document.querySelectorAll(".tarjeta");
-    
-    for (let i = 0; i< cards.length; i++) {
-        
-        cards[i].onclick = () =>{
-            const idPersonajes = cards[i].dataset.id;
-            contenedorTarjetasIndividuales.classList.remove("ocultar")
-            cardPersonajes.classList.add("ocultar")
-            contenedorPaginador.classList.add("ocultar")
-            verCardIndividual(idPersonajes);
-        }
-    }
-} 
+const clickTarjetaPersonaje = () => {
+  const cards = document.querySelectorAll(".tarjeta");
 
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].onclick = () => {
+      const idPersonajes = cards[i].dataset.id;
+      contenedorTarjetasIndividuales.classList.remove("ocultar");
+      cardPersonajes.classList.add("ocultar");
+      contenedorPaginador.classList.add("ocultar");
+      verCardIndividual(idPersonajes);
+    };
+  }
+};
 
 //***Interacciones con los botones nav y tarjeta individual****
-
-const addOcultar = () =>{
-    hero.classList.add("ocultar")
-    seccionBuscador.classList.add("ocultar")
-    seccionPersonajes.classList.add("ocultar")
-    seccionEpisodios.classList.add("ocultar")
-    contenedorTarjetasIndividuales.classList.add("ocultar")
-    seccionInfoGeneral.classList.add("ocultar")
-    footer.classList.add("ocultar")
-}
+const addOcultar = () => {
+  hero.classList.add("ocultar");
+  seccionBuscador.classList.add("ocultar");
+  seccionPersonajes.classList.add("ocultar");
+  seccionEpisodios.classList.add("ocultar");
+  contenedorTarjetasIndividuales.classList.add("ocultar");
+  seccionInfoGeneral.classList.add("ocultar");
+  footer.classList.add("ocultar");
+};
 
 contenedorImgNav.onclick = () => {
-    addOcultar()
-    hero.classList.remove("ocultar")
-    footer.classList.remove("ocultar")
-}
+  addOcultar();
+  hero.classList.remove("ocultar");
+  footer.classList.remove("ocultar");
+};
 
 botonInfo.onclick = () => {
-    addOcultar()
-    seccionInfoGeneral.classList.remove("ocultar")
-}
+  addOcultar();
+  seccionInfoGeneral.classList.remove("ocultar");
+};
 
 botonPersonajes.onclick = () => {
-    addOcultar()
-    cardPersonajes.classList.remove("ocultar")
-    seccionBuscador.classList.remove("ocultar")
-    seccionPersonajes.classList.remove("ocultar")
-}
+  addOcultar();
+  cardPersonajes.classList.remove("ocultar");
+  seccionBuscador.classList.remove("ocultar");
+  seccionPersonajes.classList.remove("ocultar");
+};
 
 botonEpisodios.onclick = () => {
-    addOcultar()
-    seccionEpisodios.classList.remove("ocultar") 
-}
+  addOcultar();
+  seccionEpisodios.classList.remove("ocultar");
+};
 
 botonVolver.onclick = () => {
-    addOcultar()
-    contenedorPaginador.classList.remove("ocultar")
-    cardPersonajes.classList.remove("ocultar")
-    seccionBuscador.classList.remove("ocultar")
-    seccionPersonajes.classList.remove("ocultar")
-}
+  addOcultar();
+  contenedorPaginador.classList.remove("ocultar");
+  cardPersonajes.classList.remove("ocultar");
+  seccionBuscador.classList.remove("ocultar");
+  seccionPersonajes.classList.remove("ocultar");
+};

@@ -1,65 +1,65 @@
-@mixin displayflex ($direction: row, $content:center, $aling: center){
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $content;
-    align-items: $aling;
-    flex-wrap: wrap;
-   }
-   
-   @mixin card ($width: 180px, $height: 240px ){
-       width: $width;
-       height: $height;
-       padding: 20px;
-       margin: 15px;
-       border: 2px solid $color-cuaternario;
-       border-radius: 5px;
-       color: $color-principal;
-       font-family: $tipografia-principal;
-       background-color: $color-tarjeta-adentro;
-       box-shadow: 5px 5px 12px -3px $color-terciario;
-   }
-   
-   @mixin imagen-card(){
-       width: 100%;
-    }
-   
-   @mixin contenedor-imagen(){
-       width: 160px;
-       height: 160px;
-       overflow: hidden;
-       box-shadow: 5px 5px 12px -3px $color-principal;
-   }
+@mixin displayflex($direction: row, $content: center, $aling: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $aling;
+  flex-wrap: wrap;
+}
 
-   @mixin imagen-nav(){
-    width: 100%;
-    }
+@mixin card($width: 180px, $height: 240px) {
+  width: $width;
+  height: $height;
+  padding: 20px;
+  margin: 15px;
+  border: 2px solid $color-cuaternario;
+  border-radius: 5px;
+  color: $color-principal;
+  font-family: $tipografia-principal;
+  background-color: $color-tarjeta-adentro;
+  box-shadow: 5px 5px 12px -3px $color-terciario;
+}
 
-    @mixin contenedor-imagen-nav(){
-    width: 100px;
-    }
+@mixin imagen-card() {
+  width: 100%;
+}
 
-    @mixin nav-busqueda(){
-        font-family: $tipografia-principal;
-        color: $color-secundario;
-        font-weight: 600;
-        font-size: 25px;
-    }
+@mixin contenedor-imagen() {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  box-shadow: 5px 5px 12px -3px $color-principal;
+}
 
-    @mixin nav(){
-        background-color: $color-principal;
-        position: fixed;
-        z-index: 3;
-        padding-bottom: 20px;
-        width: 100%;
-        height: 200 px;
-        box-shadow: 5px 5px 12px -3px $color-terciario;
-        font-weight: 200;
-    }
+@mixin imagen-nav() {
+  width: 100%;
+}
 
-    @mixin botones(){
-        background-color: $color-principal;
-        color: $color-secundario;
-        border:0;
-        font-size: 30px;
-        font-family: $tipografia-principal;
-    }
+@mixin contenedor-imagen-nav() {
+  width: 100px;
+}
+
+@mixin nav-busqueda() {
+  font-family: $tipografia-principal;
+  color: $color-secundario;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+@mixin nav() {
+  background-color: $color-principal;
+  position: fixed;
+  z-index: 3;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 200 px;
+  box-shadow: 5px 5px 12px -3px $color-terciario;
+  font-weight: 200;
+}
+
+@mixin botones() {
+  background-color: $color-principal;
+  color: $color-secundario;
+  border: 0;
+  font-size: 30px;
+  font-family: $tipografia-principal;
+}

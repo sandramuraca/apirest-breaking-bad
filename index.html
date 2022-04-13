@@ -1,116 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/5f812df695.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./assets/favincon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/5f812df695.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="./assets/favincon.png" />
     <title>TP Api Rest- Breakin Bad</title>
-</head>
+  </head>
 
-<body>
-    <audio src="./assets/[ONTIVA.COM] Breaking Bad Full Intro Title Sequence-64k.mp3" autoplay></audio>
+  <body>
+    <audio
+      src="./assets/[ONTIVA.COM] Breaking Bad Full Intro Title Sequence-64k.mp3"
+      autoplay
+    ></audio>
 
     <!-- Barra navegación -->
     <nav class="nav">
-        <div class="contenedor-img-nav"> <img src="./assets/PngItem_1906030.png" alt="caravan" class="img-caravan"></div>
-        <ul class="botones-nav" id="contenedor-botones">
-            <li class="boton-nav" id="boton-info">Información General</li>
-            <li class="boton-nav" id="boton-personajes">Personajes</li>
-            <li class="boton-nav" id="boton-episodios">Episodios</li>
-        </ul>
+      <div class="contenedor-img-nav">
+        <img
+          src="./assets/PngItem_1906030.png"
+          alt="caravan"
+          class="img-caravan"
+        />
+      </div>
+      <ul class="botones-nav" id="contenedor-botones">
+        <li class="boton-nav" id="boton-info">Información General</li>
+        <li class="boton-nav" id="boton-personajes">Personajes</li>
+        <li class="boton-nav" id="boton-episodios">Episodios</li>
+      </ul>
     </nav>
 
     <!--Main  -->
     <main class="hero">
-        <div class="contenedor-img-hero">
-            <img src="./assets/walter-jessie4.jpg" alt="desierto-walter-jessie" class="img-hero">
-            <img class="ocultar img-hero-secundaria" src="./assets/walter.jpg" alt="walter">
-        </div>
+      <div class="contenedor-img-hero">
+        <img
+          src="./assets/walter-jessie4.jpg"
+          alt="Walter y Jessie en el desierto"
+          class="img-hero"
+        />
+        <img
+          class="ocultar img-hero-secundaria"
+          src="./assets/walter.jpg"
+          alt="walter"
+        />
+      </div>
     </main>
 
     <!-- Sección información general -->
     <section class="info-general ocultar">
-        <div class="contenerdor-img-info"><img src="./assets/poster.jpg" alt=""></div>
-        <div class="contenedor-parrafo">
-            <p><strong>Breaking Bad</strong> es una serie de televisión estadounidense creada y producida por Vince Gilligan. Situada y producida en Albuquerque, Nuevo México, consiste en la historia de <strong>Walter White</strong>, un profesor de química al que diagnostican un cáncer de pulmón inoperable.</p>
-            <br>
-            <p>Al concluir que su enfermedad iba a arruinar financieramente a su familia, él toma una decisión con el fin de ganar más dinero durante el tiempo que le queda y transforma una vieja Caravan en un laboratorio  sobre ruedas.</p>
-            <br>
-            <p>Así Walter se transforma en <strong>HEISENBERG</strong> , cocinero de metanfetaminas, junto a Jessie ex alumno, adicto y dealer.</p>
-            <br>
-            <p>La serie se estrenó en <strong>2008</strong>, tiene <strong>5 temporadas</strong>  con un total de <strong>62 episodios</strong>.</p>
-
-            
-        </div>
+      <div class="contenerdor-img-info">
+        <img src="./assets/poster.jpg" alt="" />
+      </div>
+      <div class="contenedor-parrafo">
+        <p>
+          <strong>Breaking Bad</strong> es una serie de televisión
+          estadounidense creada y producida por Vince Gilligan. Situada y
+          producida en Albuquerque, Nuevo México, consiste en la historia de
+          <strong>Walter White</strong>, un profesor de química al que
+          diagnostican un cáncer de pulmón inoperable.
+        </p>
+        <br />
+        <p>
+          Al concluir que su enfermedad iba a arruinar financieramente a su
+          familia, él toma una decisión con el fin de ganar más dinero durante
+          el tiempo que le queda y transforma una vieja Caravan en un
+          laboratorio sobre ruedas.
+        </p>
+        <br />
+        <p>
+          Así Walter se transforma en <strong>HEISENBERG</strong> , cocinero de
+          metanfetaminas, junto a Jessie ex alumno, adicto y dealer.
+        </p>
+        <br />
+        <p>
+          La serie se estrenó en <strong>2008</strong>, tiene
+          <strong>5 temporadas</strong> con un total de
+          <strong>62 episodios</strong>.
+        </p>
+      </div>
     </section>
 
     <!-- Campo de búsqueda -->
     <section class="seccion-buscador ocultar">
-        <form action="" id="form-busqueda">
-            <label for=""> Buscar Personaje <span><i class="fas fa-search"></i></span></label>
-            <input type="text" name="" id="input-busqueda" placeholder="Escriba aqui el nombre del personaje" size="50" class="input-busqueda">
-        </form>
+      <form action="" id="form-busqueda">
+        <label for="form-busqueda">
+          Buscar Personaje <span><i class="fas fa-search"></i></span
+        ></label>
+        <input
+          type="text"
+          name="input-busqueda"
+          id="input-busqueda"
+          placeholder="Escriba aqui el nombre del personaje"
+          size="50"
+          class="input-busqueda"
+        />
+      </form>
     </section>
 
-   
     <!-- Sección personajes  -->
     <section class="seccion-personajes ocultar">
-        
-        <div id="card-personajes" class="contenedor-tarjetas"></div>
-        <div class="contenedor-paginador">
-            <button id="anterior"><span><i class="fas fa-angle-left"></i></span>Anterior</button>
-            <button id="siguiente">Siguiente<span><i class="fas fa-angle-right"></i></span></button>
-        </div>
-
+      <div id="card-personajes" class="contenedor-tarjetas"></div>
+      <div class="contenedor-paginador">
+        <button id="anterior">
+          <span><i class="fas fa-angle-left"></i></span>Anterior
+        </button>
+        <button id="siguiente">
+          Siguiente<span><i class="fas fa-angle-right"></i></span>
+        </button>
+      </div>
     </section>
-    
+
     <!-- tarjeta individual personaje -->
     <section class="contenedor-tarjetas-individuales ocultar">
-        <button class="boton-volver"> <span><i class="fas fa-arrow-left"></i></span>Volver</button>
-        <div class="tarjetas-individuales"></div>
+      <button class="boton-volver">
+        <span><i class="fas fa-arrow-left"></i></span>Volver
+      </button>
+      <div class="tarjetas-individuales"></div>
     </section>
 
     <!-- Sección episodios -->
     <section class="seccion-episodios ocultar">
-        <h3 class="titulo-episodios">En esta sección encontraras la información de los episodios por temporada:</h3>
-        <div id="card-episodios" class="contenedor-tarjetas-episodios"></div>
+      <h3 class="titulo-episodios">
+        En esta sección encontraras la información de los episodios por
+        temporada:
+      </h3>
+      <div id="card-episodios" class="contenedor-tarjetas-episodios"></div>
     </section>
 
     <!-- footer -->
     <footer id="footer">
-        
-            <div class="contenerdor-iconos-footer">
-                <div>
-                    <a class="boton-icono-footer" href="https://github.com/sandramuraca" target="blanck" >
-                        <i class="icono-redes-footer fab fa-github-alt"></i>
-                    </a>
-                </div>        
-                
-                <div>
-                    <a class="boton-icono-footer" href="https://www.linkedin.com/in/sandra-muraca-13a76146/" target="blanck">
-                        <i class="icono-redes-footer fab fa-linkedin-in"></i>
-                    </a>
-                </div>              
-                
-                <div>
-                    <a class="boton-icono-footer" href="mailto:sandramuraca@gmail.com">
-                        <i class="icono-redes-footer fas fa-envelope"></i>
-                    </a>
-                </div>               
-                    
-            </div>
+      <div class="contenerdor-iconos-footer">
+        <div>
+          <a
+            aria-label="link a git hub"
+            class="boton-icono-footer"
+            href="https://github.com/sandramuraca"
+            target="blanck"
+          >
+            <i class="icono-redes-footer fab fa-github-alt"></i>
+          </a>
+        </div>
 
-            <div class="copyright">
-                <p class="texto-copy"> 💻<span class="copyright"> <i class="icono-copy fas fa-copyright"></i></span> 2022 - Diseño y Desarrollo: Sandra Muraca - TP Api Rest - Ada 9na. FE 💻</p>
-            </div>
-        
+        <div>
+          <a
+            aria-label="link linkeding"
+            class="boton-icono-footer"
+            href="https://www.linkedin.com/in/sandra-muraca-13a76146/"
+            target="blanck"
+          >
+            <i class="icono-redes-footer fab fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <div>
+          <a
+            aria-label="link a correo electronico"
+            class="boton-icono-footer"
+            href="mailto:sandramuraca@gmail.com"
+          >
+            <i class="icono-redes-footer fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p class="texto-copy">
+          💻<span class="copyright">
+            <i class="icono-copy fas fa-copyright"></i
+          ></span>
+          2022 - Diseño y Desarrollo: Sandra Muraca - TP Api Rest - Ada 9na. FE
+          💻
+        </p>
+      </div>
     </footer>
-    
-    
 
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
