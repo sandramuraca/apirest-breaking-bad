@@ -18,9 +18,8 @@ label{
     color: $color-secundario;
 
 }
-// un pseudo elemento debe ir siempre asociado a un elemento
-// .input-busqueda::placeholder {}
-::placeholder{
+
+.input-busqueda::placeholder{
     color: $color-secundario;
 }
 
